@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms Demo</title>
+  </head>
+  <body>
+    <h1>Forms Demo</h1>
+    <button>Formun Dışında</button>
+    <form action="/food">
+      <button>Lütfen formu yollamayın</button>
+      <div>
+        <label for="userName">Kullanıcı Adı Giriniz:</label>
+        <input placeholder="Kullanıcı Adı" id="userName" name="userName" />
+      </div>
+      <input type="password" placeholder="Şifre" name="password" />
+      <input type="color" name="color" />
+      <input type="number" placeholder="Sayı" min="1" max="10" />
+      <input />
+      <button type="submit">Submit!!!</button>
+      <input type="submit" value="Tıklayın" />
+    </form>
+    <form action="https://www.reddit.com/search">
+      <label for="reddit">Search Reddit:</label>
+      <input type="text" id="reddit" name="q" />
+      <button>Submit</button>
+    </form>
+    <h2>Daha Fazla Input</h2>
+    <form action="/birds">
+      <input type="checkbox" name="tos" id="agree" checked />
+      <label for="agree">Kabul ediyorum</label>
+      <div>
+        <label for="xs">XS:</label>
+        <input type="radio" name="size" id="xs" value="xs" />
+        <label for="s">S:</label>
+        <input type="radio" name="size" id="s" value="s" />
+        <label for="m">M:</label>
+        <input type="radio" name="size" id="m" value="m" />
+      </div>
+      <div>
+        <label for="animal">Favori hayvanınızı seçiniz...</label>
+        <select name="animal" id="animal">
+          <option value="fish">Balık</option>
+          <option value="cat" selected>Kedi</option>
+          <option value="dog">Köpek</option>
+        </select>
+      </div>
+      <div>
+        <label for="cheese">Peynir Miktarı:</label>
+        <input
+          type="range"
+          name="cheese"
+          id="cheese"
+          min="0"
+          max="100"
+          step="7"
+          value="75"
+        />
+      </div>
+      <div>
+        <label for="idea">Görüşleriniz:</label><br />
+        <textarea name="idea" id="idea" cols="30" rows="10">
+Görüşleriniz önemli...</textarea
+        >
+      </div>
+      <button>Yolla</button>
+    </form>
+    <h2>Validations</h2>
+    <form action="/spare">
+      <label for="first">İsim Giriniz:</label>
+      <input
+        type="text"
+        name="first"
+        id="first"
+        minlength="5"
+        maxlength="25"
+        required
+      />
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
+<!-- http://127.0.0.1:5500/spare?first=murat -->
+<!-- http://127.0.0.1:5500/birds?tos=on&animal=cat&cheese=98 -->
+<!-- http://127.0.0.1:5500/birds?tos=on&animal=cat&cheese=35 -->
+<!-- http://127.0.0.1:5500/birds?tos=on&animal=fish -->
+<!-- http://127.0.0.1:5500/food? -->
+<!-- http://127.0.0.1:5500/food?userName=murat -->
+<!-- http://127.0.0.1:5500/food?userName=murat&password=asdadasd -->
+<!-- http://127.0.0.1:5500/food?userName=murat&password=&color=%23853d3d -->
+<!-- https://www.reddit.com/search/?q=dog -->
+<!-- http://127.0.0.1:5500/birds?tos=on -->
+<!-- http://127.0.0.1:5500/birds?tos=on&size=on -->
+<!-- http://127.0.0.1:5500/birds?tos=on&size=s -->
+<!-- http://127.0.0.1:5500/spare?first= -->
